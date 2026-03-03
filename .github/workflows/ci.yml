@@ -38,7 +38,7 @@ jobs:
         run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s cgl -n
 
       - name: 'Run Rector'
-        run: Build/Scripts/runTests.sh -s rector -n
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s rector -n
 
       - name: 'PHPStan'
         run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s phpstan
