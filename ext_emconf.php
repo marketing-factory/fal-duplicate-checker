@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-$EM_CONF['fal_duplicate_checker'] = [
+$EM_CONF[$_EXTKEY] = [
     'title' => 'FAL Duplicate Checker',
     'description' => 'Detects duplicate files in FAL (sys_file) and displays a warning in the TYPO3 backend file info view.',
     'category' => 'be',
