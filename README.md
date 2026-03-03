@@ -4,7 +4,7 @@ A TYPO3 backend extension that detects duplicate files in FAL (`sys_file`) by co
 
 ## Requirements
 
-- TYPO3 13.4.x
+- TYPO3 13.4 or 14.x
 - PHP 8.2+
 
 ## Installation
