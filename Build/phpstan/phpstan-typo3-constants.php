@@ -9,11 +9,6 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-use Mfd\Fal\DuplicateChecker\Controller\Backend\ElementInformationController;
-
-return [
-    'show_item' => [
-        'target' => ElementInformationController::class . '::mainAction',
-        'path' => '/record/info',
-    ],
-];
+defined('LF') ?: define('LF', chr(10));
+defined('CR') ?: define('CR', chr(13));
+defined('CRLF') ?: define('CRLF', CR . LF);

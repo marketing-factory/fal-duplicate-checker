@@ -1,32 +1,44 @@
-name: CI
+name: Tests
 
-on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+on: [pull_request]
 
 jobs:
-  lint:
-    name: PHP ${{ matrix.php }}
+  testing:
+    name: Testing
+
     runs-on: ubuntu-latest
+
     strategy:
-      fail-fast: false
+      fail-fast: true
+
       matrix:
-        php: ['8.2', '8.3', '8.4']
+        php:
+          - '8.2'
 
     steps:
-      - uses: actions/checkout@v4
+      - name: 'Checkout'
+        uses: actions/checkout@v4
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php }}
-          tools: composer
-          coverage: none
+      - name: 'Lint PHP'
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s lint
 
-      - name: Validate composer.json
-        run: composer validate --strict
+      - name: 'Composer validate'
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerValidate
 
-      - name: PHP syntax check
-        run: find Classes -name '*.php' | xargs php -l
+      - name: 'Install testing system'
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerUpdate
+
+      - name: 'Composer normalize'
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerNormalize -n
+
+      - name: 'CGL'
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s cgl -n
+
+      - name: 'Run Rector'
+        run: Build/Scripts/runTests.sh -s rector -n
+
+      - name: 'PHPStan'
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s phpstan
+
+      - name: 'Functional Tests'
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s functional

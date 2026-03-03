@@ -1,29 +1,53 @@
 {
   "name": "mfd/fal-duplicate-checker",
-  "type": "typo3-cms-extension",
   "description": "FAL duplicate file checker for TYPO3 backend",
   "license": [
     "GPL-2.0-or-later"
   ],
+  "type": "typo3-cms-extension",
   "authors": [
     {
       "name": "Christian Spoo",
-      "role": "Developer",
-      "email": "christian.spoo@marketing-factory.de"
+      "email": "christian.spoo@marketing-factory.de",
+      "role": "Developer"
     }
   ],
   "require": {
-    "typo3/cms-core": "^13.4",
-    "typo3/cms-backend": "^13.4"
+    "php": "^8.2",
+    "friendsofphp/php-cs-fixer": "^3.49",
+    "typo3/cms-backend": "^13.4",
+    "typo3/cms-core": "^13.4"
   },
-  "extra": {
-    "typo3/cms": {
-      "extension-key": "fal_duplicate_checker"
-    }
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.44",
+    "phpunit/phpunit": "^11.0",
+    "ssch/typo3-rector": "^3.6",
+    "typo3/testing-framework": "^8.0"
   },
   "autoload": {
     "psr-4": {
       "Mfd\\Fal\\DuplicateChecker\\": "Classes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mfd\\Fal\\DuplicateChecker\\Tests\\": "Tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    },
+    "bin-dir": ".Build/bin",
+    "sort-packages": true,
+    "vendor-dir": ".Build/vendor"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "fal_duplicate_checker",
+      "web-dir": ".Build/public"
     }
   }
 }

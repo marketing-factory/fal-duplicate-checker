@@ -1,0 +1,5 @@
+"sys_file"
+,"uid","pid","missing","type","storage","identifier","identifier_hash","folder_hash","extension","mime_type","name","sha1","size","creation_date","modification_date"
+,"1","0","0","2","1","/file1.jpg","hash_ident_1","hash_folder_1","jpg","image/jpeg","file1.jpg","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","1024","1700000000","1700000000"
+,"2","0","0","2","1","/file2.jpg","hash_ident_2","hash_folder_1","jpg","image/jpeg","file2.jpg","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","1024","1700000000","1700000000"
+,"3","0","0","2","1","/file3.jpg","hash_ident_3","hash_folder_2","jpg","image/jpeg","file3.jpg","bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","2048","1700000000","1700000000"
