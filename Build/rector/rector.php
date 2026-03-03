@@ -53,6 +53,7 @@ return RectorConfig::configure()
     ->withSkip([
         NullToStrictStringFuncCallArgRector::class,
         '*Build/*',
+        'Classes/Controller/Backend/ElementInformationController.php',
         '*Resources/*',
         '*Model/*',
     ]);
