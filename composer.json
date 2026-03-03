@@ -1,0 +1,29 @@
+{
+  "name": "mfd/fal-duplicate-checker",
+  "type": "typo3-cms-extension",
+  "description": "FAL duplicate file checker for TYPO3 backend",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "authors": [
+    {
+      "name": "Christian Spoo",
+      "role": "Developer",
+      "email": "christian.spoo@marketing-factory.de"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^13.4",
+    "typo3/cms-backend": "^13.4"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "fal_duplicate_checker"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Mfd\\Fal\\DuplicateChecker\\": "Classes/"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+// Register template override path for cms-backend so this extension
+// can override the ElementInformation template without modifying the sitepackage.
+// The integer key must be unique; use a new timestamp-style value (e.g. 1743610000).
+templates.typo3/cms-backend.1743610000 = mfd/fal-duplicate-checker:Resources/Private/Templates
